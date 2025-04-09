@@ -26,7 +26,7 @@ Once you have run the line of code, take a look at the **console** (bottom left 
 
 ```r
 date()
-#> [1] "Wed Apr  9 13:29:49 2025"
+#> [1] "Wed Apr  9 13:31:10 2025"
 ```
 
 Congratulations! You have entered the world of coding.
