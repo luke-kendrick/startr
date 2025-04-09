@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Packages and Importing Data | StartR for Psychology at Royal Holloway</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::bs4_book,
+set in the _output.yml file.</p>" />
+  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Packages and Importing Data | StartR for Psychology at Royal Holloway" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::bs4_book,
+set in the _output.yml file.</p>" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Packages and Importing Data | StartR for Psychology at Royal Holloway" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::bs4_book,
+set in the _output.yml file.</p>" />
+  
+
+<meta name="author" content="Luke Kendrick" />
+
+
+<meta name="date" content="2025-04-09" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="putting-r-to-work.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome to StartR</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#what-is-r-and-rstudio"><i class="fa fa-check"></i><b>1.1</b> What is R and RStudio?</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#installing-r-and-rstudio"><i class="fa fa-check"></i><b>1.2</b> Installing R and RStudio</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#opening-rstudio"><i class="fa fa-check"></i><b>1.3</b> Opening RStudio</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#a-quick-tour-of-rstudio"><i class="fa fa-check"></i><b>1.4</b> A Quick Tour of RStudio</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#chapter-summary"><i class="fa fa-check"></i><b>1.5</b> Chapter Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="putting-r-to-work.html"><a href="putting-r-to-work.html"><i class="fa fa-check"></i><b>2</b> Putting R to Work</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="putting-r-to-work.html"><a href="putting-r-to-work.html#what-day-is-it-today"><i class="fa fa-check"></i><b>2.1</b> What Day is it Today?</a></li>
+<li class="chapter" data-level="2.2" data-path="putting-r-to-work.html"><a href="putting-r-to-work.html#functions-and-arguments-a-piece-of-pi"><i class="fa fa-check"></i><b>2.2</b> Functions and Arguments: A Piece of Pi</a></li>
+<li class="chapter" data-level="2.3" data-path="putting-r-to-work.html"><a href="putting-r-to-work.html#comments-human-notes"><i class="fa fa-check"></i><b>2.3</b> Comments = Human Notes</a></li>
+<li class="chapter" data-level="2.4" data-path="putting-r-to-work.html"><a href="putting-r-to-work.html#creating-objects"><i class="fa fa-check"></i><b>2.4</b> Creating Objects</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="putting-r-to-work.html"><a href="putting-r-to-work.html#naming-and-removing-objects"><i class="fa fa-check"></i><b>2.4.1</b> <strong>Naming and Removing Objects</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="putting-r-to-work.html"><a href="putting-r-to-work.html#troubleshooting-and-getting-help-with-r"><i class="fa fa-check"></i><b>2.5</b> Troubleshooting and Getting Help with R</a></li>
+<li class="chapter" data-level="2.6" data-path="putting-r-to-work.html"><a href="putting-r-to-work.html#chapter-summary-1"><i class="fa fa-check"></i><b>2.6</b> Chapter Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="packages-and-importing-data.html"><a href="packages-and-importing-data.html"><i class="fa fa-check"></i><b>3</b> Packages and Importing Data</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="packages-and-importing-data.html"><a href="packages-and-importing-data.html#what-are-packages"><i class="fa fa-check"></i><b>3.1</b> What are Packages?</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="packages-and-importing-data.html"><a href="packages-and-importing-data.html#installing-a-package"><i class="fa fa-check"></i><b>3.1.1</b> Installing a Package</a></li>
+<li class="chapter" data-level="3.1.2" data-path="packages-and-importing-data.html"><a href="packages-and-importing-data.html#loading-a-package"><i class="fa fa-check"></i><b>3.1.2</b> Loading a Package</a></li>
+<li class="chapter" data-level="3.1.3" data-path="packages-and-importing-data.html"><a href="packages-and-importing-data.html#checking-packages"><i class="fa fa-check"></i><b>3.1.3</b> Checking Packages</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="packages-and-importing-data.html"><a href="packages-and-importing-data.html#importing-data"><i class="fa fa-check"></i><b>3.2</b> Importing Data</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="packages-and-importing-data.html"><a href="packages-and-importing-data.html#set-the-working-directory"><i class="fa fa-check"></i><b>3.2.1</b> Set the Working Directory</a></li>
+<li class="chapter" data-level="3.2.2" data-path="packages-and-importing-data.html"><a href="packages-and-importing-data.html#importing-data-1"><i class="fa fa-check"></i><b>3.2.2</b> Importing Data</a></li>
+<li class="chapter" data-level="3.2.3" data-path="packages-and-importing-data.html"><a href="packages-and-importing-data.html#read_csv"><i class="fa fa-check"></i><b>3.2.3</b> read_csv()</a></li>
+<li class="chapter" data-level="3.2.4" data-path="packages-and-importing-data.html"><a href="packages-and-importing-data.html#some-very-basic-descriptive-statistics"><i class="fa fa-check"></i><b>3.2.4</b> Some (very) Basic Descriptive Statistics</a></li>
+<li class="chapter" data-level="3.2.5" data-path="packages-and-importing-data.html"><a href="packages-and-importing-data.html#using-the-pipe-operator"><i class="fa fa-check"></i><b>3.2.5</b> Using the Pipe Operator</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="packages-and-importing-data.html"><a href="packages-and-importing-data.html#chapter-summary-2"><i class="fa fa-check"></i><b>3.3</b> Chapter Summary</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">StartR for Psychology at Royal Holloway</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="packages-and-importing-data" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Packages and Importing Data<a href="packages-and-importing-data.html#packages-and-importing-data" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>In this chapter we will cover two important features of RStudio. Firstly is the use of packages. Packages allow you to access a variety of different functions. Additionally, before you begin working with any data you will need to somehow actually get that data into RStudio via a working directory.</p>
+<div id="what-are-packages" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> What are Packages?<a href="packages-and-importing-data.html#what-are-packages" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>When you first open RStudio, you will have access to many base R functions. In fact there are a great deal of functions that exist in the base version of R. In fact, you have already used some in the previous chapter, for example, <code>date()</code> or <code>round()</code> are considered base R functions.</p>
+<p>Base R is essentially the “basic subscription” version of RStudio without any additional apps installed.</p>
+<p>Often we might need some quite specialised functions. In order to access these we need to install and load <code>packages</code>. You can think of <code>packages</code> as a bit like your mobile phone apps…in that you need to download them, install them, and then open them to access their specific functions.</p>
+<p>One <strong>key</strong> package that is required for learning and using R for Psychology at Royal Holloway is the <code>tidyverse</code> package. <code>Tidyverse</code> is essentially a collection of packages, see more <a href="https://www.tidyverse.org/">here</a>.</p>
+<div id="installing-a-package" class="section level3 hasAnchor" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> Installing a Package<a href="packages-and-importing-data.html#installing-a-package" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Tidyverse is already installed on most Royal Holloway campus computers and so this step is not necessary. But still worth a read as in future you may need to install other packages beyond the tidyverse.</p>
+<p>To install tidyverse we can use the <code>install.packages()</code> function. See below:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="packages-and-importing-data.html#cb16-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>) <span class="co"># install the tidyverse package</span></span></code></pre></div>
+<p>Note you’ll see I also followed my own advice and used human notes with the hashtag <code>#</code>.</p>
+<p>You’ll notice that the name of the package needs to be in quotation marks. When you run this line of code, RStudio will get to work installing the package. It might take a couple of minutes and you will see this happening in the console (bottom left panel).</p>
+</div>
+<div id="loading-a-package" class="section level3 hasAnchor" number="3.1.2">
+<h3><span class="header-section-number">3.1.2</span> Loading a Package<a href="packages-and-importing-data.html#loading-a-package" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Just because you have installed a package does not yet mean you are ready to use it. Next you need to load it. To do this you can use the <code>library()</code> function below:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="packages-and-importing-data.html#cb17-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co"># load the tidyverse package</span></span></code></pre></div>
+<p>Note that we do not need to use quote marks.</p>
+<p>Remember, you only need to install a package once on your computer. However, each time you reopen RStudio (whether at home or on a campus PC), you’ll need to load the necessary libraries using the <code>library()</code> function.</p>
+</div>
+<div id="checking-packages" class="section level3 hasAnchor" number="3.1.3">
+<h3><span class="header-section-number">3.1.3</span> Checking Packages<a href="packages-and-importing-data.html#checking-packages" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>You can check which packages you have installed and loaded at anytime. Head to the “packages” tab on the bottom right panel. If the package is listed then it is installed. If there is a tick in the box on the left, that also means the package has been loaded and is ready to go! Why not try and un-tick and then tick tidyverse in this panel and see what happens in the console. See Figure <a href="packages-and-importing-data.html#fig:fig-environment-3">3.1</a> below.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-environment-3"></span>
+<img src="images/packages.jpg" alt="An example of the packages tab with the Tidyverse package loaded." width="95%" />
+<p class="caption">
+Figure 3.1: An example of the packages tab with the Tidyverse package loaded.
+</p>
+</div>
+</div>
+</div>
+<div id="importing-data" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Importing Data<a href="packages-and-importing-data.html#importing-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Now we have Tidyverse loaded, you can begin thinking about importing some data. There are different way to import data, and you might actually notice an <code>Import Dataset</code> in the environment panel. However, the best way to import data is via a <code>Working Directory</code> and using a Tidyverse function called <code>read_csv</code>. Let’s go through this bit by bit.</p>
+<div id="set-the-working-directory" class="section level3 hasAnchor" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Set the Working Directory<a href="packages-and-importing-data.html#set-the-working-directory" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The working directory is a folder on your computer that RStudio will look in to find any data files. It is also where RStudio can save any output files too.</p>
+<p>Before setting your working directory it is important to think about your file structure on your computer. For example, you might consider creating a special folder to save any of your RStudio work. You can then link this special folder to RStudio using the steps below.</p>
+<p>Head to the <code>Session</code> tab at the top of the RStudio window and then select <code>Set Working Directory</code> -&gt; <code>Choose Directory</code>. See Figure <a href="packages-and-importing-data.html#fig:fig-environment-4">3.2</a> below.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-environment-4"></span>
+<img src="images/setwd.jpg" alt="Set the working directory" width="80%" />
+<p class="caption">
+Figure 3.2: Set the working directory
+</p>
+</div>
+<p>This will open up a file browser on your computer. Select the folder on your computer that you have designated as your <code>Working Directory</code>. The one in Figure <a href="packages-and-importing-data.html#fig:fig-environment-5">3.3</a> is called <code>R_Folder</code> but you might call yours something else if you like, for example, <code>StartR</code>. You’ll notice that the folder I have selected below is empty because it is a new folder with nothing in it…yet!</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-environment-5"></span>
+<img src="images/setwd2.jpg" alt="Head into the folder that you will use as your working directory in this session" width="75%" />
+<p class="caption">
+Figure 3.3: Head into the folder that you will use as your working directory in this session
+</p>
+</div>
+<p>In case you forget, you can check your working directory at any point using this line of code:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="packages-and-importing-data.html#cb18-1" tabindex="-1"></a><span class="fu">getwd</span>() <span class="co"># will check the current working directory.</span></span></code></pre></div>
+<p>You should see in the console (bottom left) that RStudio will tell you the location of the folder on your computer that is now your designated working directory.</p>
+</div>
+<div id="importing-data-1" class="section level3 hasAnchor" number="3.2.2">
+<h3><span class="header-section-number">3.2.2</span> Importing Data<a href="packages-and-importing-data.html#importing-data-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>RStudio primarily likes to work with a file format called <code>.csv</code>. This stands for comma separated values. There are ways to import other types of files (e.g., SPSS, excel, text) but during this course we will only work with <code>.csv</code> files.</p>
+<p>Let’s try and get a basic data set in to RStudio. Download the data set below and <em>remember</em> save it into your designated working directory folder. For reference, the data are also presented below.</p>
+<p><a href="data/height.csv">Download the data set</a></p>
+<table>
+<caption>A table of ten people containing their age (in years) and height (in cm).</caption>
+<thead>
+<tr class="header">
+<th>id</th>
+<th>age</th>
+<th>height</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>22</td>
+<td>167</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>26</td>
+<td>178</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>18</td>
+<td>173</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>32</td>
+<td>169</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>19</td>
+<td>183</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>39</td>
+<td>172</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>41</td>
+<td>159</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>46</td>
+<td>164</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>32</td>
+<td>153</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>25</td>
+<td>159</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="read_csv" class="section level3 hasAnchor" number="3.2.3">
+<h3><span class="header-section-number">3.2.3</span> read_csv()<a href="packages-and-importing-data.html#read_csv" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Once the data file is in your working directory folder we can try to import it using <code>read_csv()</code>.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="packages-and-importing-data.html#cb19-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;height.csv&quot;</span>) <span class="co"># import the height.csv data set and save it as an object called `data`.</span></span></code></pre></div>
+<p>This line of code here begins to combine everything we have covered in this StartR short course so far. Take a moment ro work through the explanations below to ensure you understand:</p>
+<ul>
+<li><p><code>data</code> is an <strong>object</strong>. I have called it data as it is just a short 4 letter word and is our data set.</p></li>
+<li><p><code>&lt;-</code> is the <strong>assignment operator</strong>. It will assign things to the right side to our object on the left side called <code>data.</code></p></li>
+<li><p><code>read_csv()</code> is a <strong>function</strong> which will read data from a .csv file.</p></li>
+<li><p><code>"height.csv"</code> is an <strong>argument</strong> which tells the function how to behave. In this case it will look for a specific file called height.csv.</p></li>
+<li><p>It will look for this file in the <code>working directory</code>.</p></li>
+<li><p>If this works successfully you should see an object called <code>data</code> in the <strong>environment</strong> panel (top right), see Figure <a href="packages-and-importing-data.html#fig:fig-environment-6">3.4</a>.</p></li>
+<li><p>Notice that “height.csv” is spelled exactly to match the file name. No capital letters or spaces, which is how it appeared when you downloaded it.</p></li>
+</ul>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-environment-6"></span>
+<img src="images/importdata.jpg" alt="The environment panel with the newly created `data` object" width="75%" />
+<p class="caption">
+Figure 3.4: The environment panel with the newly created <code>data</code> object
+</p>
+</div>
+<p>You might also notice there is some very basic information visible to the right of the object in the environment. For example, there are <code>10 obs. of 3 variables</code>. This tells us there are 10 observations across three different variables.</p>
+<p>Finally, if you double click on the object name <code>data</code>, it will open the data file in a new tab.</p>
+<p>You can also achieve the same result using:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="packages-and-importing-data.html#cb20-1" tabindex="-1"></a><span class="fu">view</span>(data) <span class="co"># will open the data in a new tab</span></span></code></pre></div>
+<p>A final note on <code>read_csv()</code>.</p>
+<p>You might learn that there is a similar function called <code>read.csv</code> (with a dot <code>.</code> not an underscore <code>_</code>). Do not use read.csv. Always use the version with an underscore, which comes from the tidyverse package.</p>
+</div>
+<div id="some-very-basic-descriptive-statistics" class="section level3 hasAnchor" number="3.2.4">
+<h3><span class="header-section-number">3.2.4</span> Some (very) Basic Descriptive Statistics<a href="packages-and-importing-data.html#some-very-basic-descriptive-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In the final part of this chapter, you will calculate some very basic descriptive statistics. I wanted to minimise any “stats” stuff in this short course as the aim is really to learn about the RStudio layout and how it works before we properly work with data.</p>
+<p>However, the code below will allow you to practice a little more understanding R functions, running code, and reading output.</p>
+<p>We need a new package for this final section:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="packages-and-importing-data.html#cb21-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;psych&quot;</span>) <span class="co"># install Psych package</span></span>
+<span id="cb21-2"><a href="packages-and-importing-data.html#cb21-2" tabindex="-1"></a><span class="fu">library</span>(psych) <span class="co"># load the psych package</span></span></code></pre></div>
+<p>How about you work out some basic descriptive statistics for this data file. Using the <code>psych</code> package, you could use:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="packages-and-importing-data.html#cb22-1" tabindex="-1"></a><span class="fu">describe</span>(data) <span class="co"># produce descriptive statistics</span></span></code></pre></div>
+<p>Run that now and check the output. The first line you might notice that id (identification number) has a mean of 5.50. This is meaningless and actually we could remove the ID column. How could we do this?</p>
+</div>
+<div id="using-the-pipe-operator" class="section level3 hasAnchor" number="3.2.5">
+<h3><span class="header-section-number">3.2.5</span> Using the Pipe Operator<a href="packages-and-importing-data.html#using-the-pipe-operator" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Do you remember right at the start of chapter one I used the example below which is a three step command:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="packages-and-importing-data.html#cb23-1" tabindex="-1"></a><span class="st">`</span><span class="at">stand up</span><span class="st">`</span> and then,</span>
+<span id="cb23-2"><a href="packages-and-importing-data.html#cb23-2" tabindex="-1"></a><span class="st">`</span><span class="at">walk towards the window</span><span class="st">`</span> and then,</span>
+<span id="cb23-3"><a href="packages-and-importing-data.html#cb23-3" tabindex="-1"></a><span class="st">`</span><span class="at">return to your seat</span><span class="st">`</span></span></code></pre></div>
+<p>With our data we actually want to do the following which is also a three step command:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="packages-and-importing-data.html#cb24-1" tabindex="-1"></a>use <span class="st">`</span><span class="at">data</span><span class="st">`</span> and then,</span>
+<span id="cb24-2"><a href="packages-and-importing-data.html#cb24-2" tabindex="-1"></a><span class="st">`</span><span class="at">remove id column</span><span class="st">`</span> and then,</span>
+<span id="cb24-3"><a href="packages-and-importing-data.html#cb24-3" tabindex="-1"></a><span class="st">`</span><span class="at">describe</span><span class="st">`</span> it.</span></code></pre></div>
+<p>We can use something called a pipe operator <code>%&gt;%</code> which essentially means “and then”. What will happen next is we will write out a set of instructions, line by line. Take a look at the code below and then run it:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="packages-and-importing-data.html#cb25-1" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb25-2"><a href="packages-and-importing-data.html#cb25-2" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>id) <span class="sc">%&gt;%</span></span>
+<span id="cb25-3"><a href="packages-and-importing-data.html#cb25-3" tabindex="-1"></a>  <span class="fu">describe</span>()</span></code></pre></div>
+<p>The three lines do the following:</p>
+<ol style="list-style-type: decimal">
+<li><p>Take our object <code>data</code> …and then…</p></li>
+<li><p>Use <code>select()</code> to remove id. We do this adding a minus sign <code>-</code> before id…and then</p></li>
+<li><p><code>describe()</code> the results.</p></li>
+</ol>
+<p>Hopefully you can now see in the console the new output with the id column removed.</p>
+<p>You will also see that the mean age was 30 years (SD = 9.64) and the mean height was 167.70 centimeters (SD = 9.25).</p>
+<p>Congratulations! You have successfully produced some descriptive statistics.</p>
+</div>
+</div>
+<div id="chapter-summary-2" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Chapter Summary<a href="packages-and-importing-data.html#chapter-summary-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In this chapter you have learnt about what packages can do for us. You might come across several different packages in the future and so you now know how to install packages and then load them. Another important task is being able to set the working directory. This is the folder on your computer that RStudio will use to find any data files. Next, you would have successfully imported a data file using read_csv(). Finally, you should have use code to produce some very simple descriptive statistics.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="putting-r-to-work.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["StartR.pdf", "StartR.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+</body>
+
+</html>

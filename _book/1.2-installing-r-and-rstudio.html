@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="1.2 Installing R and RStudio | StartR for Psychology at Royal Holloway" />
+<meta property="og:type" content="book" />
+
+<meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::bs4_book,
+set in the _output.yml file.</p>" />
+
+
+<meta name="author" content="Luke Kendrick" />
+
+<meta name="date" content="2025-03-25" />
+
+
+<meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::bs4_book,
+set in the _output.yml file.</p>">
+
+<title>1.2 Installing R and RStudio | StartR for Psychology at Royal Holloway</title>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="libs/navigation-1.1/tabsets.js"></script>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/toc.css" type="text/css" />
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+/* show arrow before summary tag as in bootstrap
+TODO: remove if bootstrap in updated in html_document (rmarkdown#1485) */
+details > summary {
+  display: list-item;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container-fluid main-container">
+
+
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li class="has-sub"><a href="index.html#welcome-to-r" id="toc-welcome-to-r"><span class="toc-section-number">1</span> Welcome to R</a>
+<ul>
+<li><a href="1.1-what-is-r-and-rstudio.html#what-is-r-and-rstudio" id="toc-what-is-r-and-rstudio"><span class="toc-section-number">1.1</span> What is R and RStudio?</a></li>
+<li><a href="1.2-installing-r-and-rstudio.html#installing-r-and-rstudio" id="toc-installing-r-and-rstudio"><span class="toc-section-number">1.2</span> Installing R and RStudio</a></li>
+<li><a href="1.3-opening-rstudio.html#opening-rstudio" id="toc-opening-rstudio"><span class="toc-section-number">1.3</span> Opening RStudio</a></li>
+</ul></li>
+<li class="has-sub"><a href="2-hello-bookdown.html#hello-bookdown" id="toc-hello-bookdown"><span class="toc-section-number">2</span> Hello bookdown</a>
+<ul>
+<li class="has-sub"><a href="2.1-a-section.html#a-section" id="toc-a-section"><span class="toc-section-number">2.1</span> A section</a>
+<ul>
+<li><a href="2.1-a-section.html#an-unnumbered-section" id="toc-an-unnumbered-section">An unnumbered section</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="installing-r-and-rstudio" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> Installing R and RStudio</h2>
+<p>With installation you will need both a car dashboard <strong>and</strong> an engine. You should install two things:</p>
+<ul>
+<li><p>R (the engine)</p></li>
+<li><p>RStudio (the car dashboard)</p></li>
+</ul>
+<p>You can install both of these <a href="https://posit.co/download/rstudio-desktop/">here</a>.</p>
+</div>
+<p style="text-align: center;">
+<a href="1.1-what-is-r-and-rstudio.html"><button class="btn btn-default">Previous</button></a>
+<a href="1.3-opening-rstudio.html"><button class="btn btn-default">Next</button></a>
+</p>
+</div>
+</div>
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+</body>
+</html>

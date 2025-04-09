@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Putting R to Work | StartR for Psychology at Royal Holloway</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::bs4_book,
+set in the _output.yml file.</p>" />
+  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Putting R to Work | StartR for Psychology at Royal Holloway" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::bs4_book,
+set in the _output.yml file.</p>" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Putting R to Work | StartR for Psychology at Royal Holloway" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::bs4_book,
+set in the _output.yml file.</p>" />
+  
+
+<meta name="author" content="Luke Kendrick" />
+
+
+<meta name="date" content="2025-04-09" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="packages-and-importing-data.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome to StartR</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#what-is-r-and-rstudio"><i class="fa fa-check"></i><b>1.1</b> What is R and RStudio?</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#installing-r-and-rstudio"><i class="fa fa-check"></i><b>1.2</b> Installing R and RStudio</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#opening-rstudio"><i class="fa fa-check"></i><b>1.3</b> Opening RStudio</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#a-quick-tour-of-rstudio"><i class="fa fa-check"></i><b>1.4</b> A Quick Tour of RStudio</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#chapter-summary"><i class="fa fa-check"></i><b>1.5</b> Chapter Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="putting-r-to-work.html"><a href="putting-r-to-work.html"><i class="fa fa-check"></i><b>2</b> Putting R to Work</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="putting-r-to-work.html"><a href="putting-r-to-work.html#what-day-is-it-today"><i class="fa fa-check"></i><b>2.1</b> What Day is it Today?</a></li>
+<li class="chapter" data-level="2.2" data-path="putting-r-to-work.html"><a href="putting-r-to-work.html#functions-and-arguments-a-piece-of-pi"><i class="fa fa-check"></i><b>2.2</b> Functions and Arguments: A Piece of Pi</a></li>
+<li class="chapter" data-level="2.3" data-path="putting-r-to-work.html"><a href="putting-r-to-work.html#comments-human-notes"><i class="fa fa-check"></i><b>2.3</b> Comments = Human Notes</a></li>
+<li class="chapter" data-level="2.4" data-path="putting-r-to-work.html"><a href="putting-r-to-work.html#creating-objects"><i class="fa fa-check"></i><b>2.4</b> Creating Objects</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="putting-r-to-work.html"><a href="putting-r-to-work.html#naming-and-removing-objects"><i class="fa fa-check"></i><b>2.4.1</b> <strong>Naming and Removing Objects</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="putting-r-to-work.html"><a href="putting-r-to-work.html#troubleshooting-and-getting-help-with-r"><i class="fa fa-check"></i><b>2.5</b> Troubleshooting and Getting Help with R</a></li>
+<li class="chapter" data-level="2.6" data-path="putting-r-to-work.html"><a href="putting-r-to-work.html#chapter-summary-1"><i class="fa fa-check"></i><b>2.6</b> Chapter Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="packages-and-importing-data.html"><a href="packages-and-importing-data.html"><i class="fa fa-check"></i><b>3</b> Packages and Importing Data</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="packages-and-importing-data.html"><a href="packages-and-importing-data.html#what-are-packages"><i class="fa fa-check"></i><b>3.1</b> What are Packages?</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="packages-and-importing-data.html"><a href="packages-and-importing-data.html#installing-a-package"><i class="fa fa-check"></i><b>3.1.1</b> Installing a Package</a></li>
+<li class="chapter" data-level="3.1.2" data-path="packages-and-importing-data.html"><a href="packages-and-importing-data.html#loading-a-package"><i class="fa fa-check"></i><b>3.1.2</b> Loading a Package</a></li>
+<li class="chapter" data-level="3.1.3" data-path="packages-and-importing-data.html"><a href="packages-and-importing-data.html#checking-packages"><i class="fa fa-check"></i><b>3.1.3</b> Checking Packages</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="packages-and-importing-data.html"><a href="packages-and-importing-data.html#importing-data"><i class="fa fa-check"></i><b>3.2</b> Importing Data</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="packages-and-importing-data.html"><a href="packages-and-importing-data.html#set-the-working-directory"><i class="fa fa-check"></i><b>3.2.1</b> Set the Working Directory</a></li>
+<li class="chapter" data-level="3.2.2" data-path="packages-and-importing-data.html"><a href="packages-and-importing-data.html#importing-data-1"><i class="fa fa-check"></i><b>3.2.2</b> Importing Data</a></li>
+<li class="chapter" data-level="3.2.3" data-path="packages-and-importing-data.html"><a href="packages-and-importing-data.html#read_csv"><i class="fa fa-check"></i><b>3.2.3</b> read_csv()</a></li>
+<li class="chapter" data-level="3.2.4" data-path="packages-and-importing-data.html"><a href="packages-and-importing-data.html#some-very-basic-descriptive-statistics"><i class="fa fa-check"></i><b>3.2.4</b> Some (very) Basic Descriptive Statistics</a></li>
+<li class="chapter" data-level="3.2.5" data-path="packages-and-importing-data.html"><a href="packages-and-importing-data.html#using-the-pipe-operator"><i class="fa fa-check"></i><b>3.2.5</b> Using the Pipe Operator</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="packages-and-importing-data.html"><a href="packages-and-importing-data.html#chapter-summary-2"><i class="fa fa-check"></i><b>3.3</b> Chapter Summary</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">StartR for Psychology at Royal Holloway</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="putting-r-to-work" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Putting R to Work<a href="putting-r-to-work.html#putting-r-to-work" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>In this chapter you will start using code and putting RStudio to work! We will begin with very basic code so that you become familiar with the layout and how entering code works.</p>
+<div id="what-day-is-it-today" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> What Day is it Today?<a href="putting-r-to-work.html#what-day-is-it-today" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Let’s begin with something really simple.</p>
+<p>When RStudio is open you want to make sure you have four panels, with the top left panel (script) open and ready. This is where you can type your code.</p>
+<p>Type the code below into your script now.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="putting-r-to-work.html#cb2-1" tabindex="-1"></a><span class="fu">date</span>()</span></code></pre></div>
+<p>Once you have typed in your code, you are ready to run it. This means you will ask RStudio to tell you today’s date.</p>
+<p>To run the code you can leave your cursor at the end of the line of code and use your keyboard to press <code>Control</code> + <code>Enter</code> or <code>Command</code> + <code>Enter</code> on a Mac. You might also notice on the top right of your script panel there is a button called <code>run</code>. This will also run the line of code but I’d recommend getting used to using the keyboard.</p>
+<div style="page-break-after: always;"></div>
+<p>Once you have run the line of code, take a look at the <strong>console</strong> (bottom left panel). If it has worked you should see today’s date:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="putting-r-to-work.html#cb3-1" tabindex="-1"></a><span class="fu">date</span>()</span>
+<span id="cb3-2"><a href="putting-r-to-work.html#cb3-2" tabindex="-1"></a><span class="co">#&gt; [1] &quot;Wed Apr  9 12:43:26 2025&quot;</span></span></code></pre></div>
+<p>Congratulations! You have entered the world of coding.</p>
+<p>Well, what else can RStudio do? It can be helpful to also think of the script panel as a very fancy calculator. With this in mind, let’s try out some maths sums. Run the following code:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="putting-r-to-work.html#cb4-1" tabindex="-1"></a><span class="dv">20</span><span class="sc">+</span><span class="dv">80</span></span></code></pre></div>
+<p>If you ran it successfully you should see the answer appear in the <strong>console</strong> (bottom left panel).</p>
+<p>Next, try a really complex sum:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="putting-r-to-work.html#cb5-1" tabindex="-1"></a><span class="dv">12345</span><span class="sc">*</span><span class="dv">54321</span></span></code></pre></div>
+<p>Note that we need to use <code>*</code> an asterisk to signify this is a multiplication sum. Run the line of code and check out the answer. In case you needed to know the answer to 12345 x 54321, RStudio is there for you!</p>
+<p>Hopefully now you are starting to see the very basics of how you should input code into RStudio and where to check to see the output.</p>
+</div>
+<div id="functions-and-arguments-a-piece-of-pi" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Functions and Arguments: A Piece of Pi<a href="putting-r-to-work.html#functions-and-arguments-a-piece-of-pi" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In the previous section, you ran a bit of code which is a <strong>function</strong> called <code>date()</code>. In R, a <strong>function</strong> is a bit of code that performs a specific task. Functions have parentheses <code>()</code> at the end, for example <code>date()</code> is a function which returns the current date and time.</p>
+<p>An <strong>argument</strong> is a piece of information that you pass into a function, which will change the way the function behaves. Let’s look at an example.</p>
+<p>The code below will use the function called <code>round()</code>. Within this function (inside the parentheses) I can enter an <strong>argument</strong>. I’ve entered the mathematical constant pi here as the argument.</p>
+<p>The function <code>round()</code> with pi <code>π</code> entered as an argument (inside the parentheses) will just round the value to the nearest whole number. Try this yourself in RStudio now.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="putting-r-to-work.html#cb6-1" tabindex="-1"></a><span class="fu">round</span>(<span class="fl">3.14159265359</span>)</span>
+<span id="cb6-2"><a href="putting-r-to-work.html#cb6-2" tabindex="-1"></a><span class="co">#&gt; [1] 3</span></span>
+<span id="cb6-3"><a href="putting-r-to-work.html#cb6-3" tabindex="-1"></a><span class="fu">round</span>(pi) <span class="co"># or you can just type `pi`</span></span>
+<span id="cb6-4"><a href="putting-r-to-work.html#cb6-4" tabindex="-1"></a><span class="co">#&gt; [1] 3</span></span></code></pre></div>
+<p>However, what if I wanted this output to two-decimal places? No problem! Simply add another argument. Some functions will contain multiple arguments, but for now let’s keep it simple.</p>
+<p>Run the code below and check your console to see the output.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="putting-r-to-work.html#cb7-1" tabindex="-1"></a><span class="fu">round</span>(<span class="fl">3.14159265359</span>, <span class="at">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
+<p>Here we have use a <code>,</code> comma to separate the arguments within the parentheses. The argument <code>digits = 2</code> can be used to change the behaviour of this function by rounding pi <code>π</code> to two decimal places. An <strong>argument</strong> will give a function some more specific guidance.</p>
+<p>As you advance further with R code you’ll be using lots of different functions and arguments.</p>
+<p>If at any point you want to learn about a function, we can use <code>?</code>. Try running the code below:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="putting-r-to-work.html#cb8-1" tabindex="-1"></a>?<span class="fu">round</span>()</span></code></pre></div>
+<p>If you ran it successfully you will notice in the <strong>output panel</strong> (bottom right) that the <strong>help</strong> tab is now showing documentation to explain how this function works, including all the possible arguments.</p>
+<p>You can use <code>?</code> at any time to see how a function works.</p>
+</div>
+<div id="comments-human-notes" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Comments = Human Notes<a href="putting-r-to-work.html#comments-human-notes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>You might be a little worried that eventually you are going to have to remember so much code. The base version of R contains thousands of functions, even before we start using <strong>packages</strong>! (more on packages later). One concern people have with code is needing to remember everything.</p>
+<p>To deal with this issue, when writing our code, we should use comments in our R script. A <strong>comment</strong> is a piece of text which you can add next to your code as a note. I like to think of comments as “human notes”, we can read them but RStudio will ignore them.</p>
+<p>In order to tell RStudio where our human notes begin we need to use <code>#</code> hashtag. Anything written after the hashtag is not processed or read by RStudio. Check out the example below:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="putting-r-to-work.html#cb9-1" tabindex="-1"></a><span class="fu">date</span>() <span class="co">#this will ask for today&#39;s date</span></span>
+<span id="cb9-2"><a href="putting-r-to-work.html#cb9-2" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="putting-r-to-work.html#cb9-3" tabindex="-1"></a><span class="fu">round</span>(<span class="fl">3.14159265359</span>, <span class="at">digits =</span> <span class="dv">2</span>) <span class="co">#this rounds a value to two decimal places</span></span></code></pre></div>
+<p>Rstudio will run those <strong>functions</strong> but the notes are there for your benefit. You should use notes routinely when writing code for two important reasons:</p>
+<ol style="list-style-type: decimal">
+<li><p>It will help remind you how your code works if you look at it again in the future.</p></li>
+<li><p>If you send or share your code with someone else, your notes can help them to understand what you’ve done and why.</p></li>
+</ol>
+<p>Therefore, here we have our first important rule:</p>
+<blockquote>
+<p><strong>Always make use of comments when coding in RStudio (#)</strong></p>
+</blockquote>
+<p>Before moving on to the next section, head back into RStudio and practice adding some notes to your R script. Remember to use the <code>#</code> hashtag. Once you’ve finished writing your notes, hit enter and then the script moves to the next line ready for the next bit of code.</p>
+</div>
+<div id="creating-objects" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Creating Objects<a href="putting-r-to-work.html#creating-objects" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Another important feature is knowing how to create an <strong>object</strong>. Variables and/or data can be assigned to objects, however, you need to create the object yourself. Let’s look at an example. Run the code below:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="putting-r-to-work.html#cb10-1" tabindex="-1"></a>myobject <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span></code></pre></div>
+<p>Let’s talk through this code step by step:</p>
+<ul>
+<li><p>What you might notice is that I have created an object called <code>myobject</code> (a truly inspirational name). This is on the very left of this line of code. You can call an object anything you like, so feel free to call it something else.</p></li>
+<li><p>Next I have used an arrow <code>&lt;-</code>. This means that anything written on the right hand side of this arrow will be committed to this object. This arrow is called an assignment operator.</p></li>
+<li><p>Then I used <code>c()</code> which is a function that allows us to list values. I created a mini data set with the numbers 1-4.</p></li>
+</ul>
+<p>Go ahead if you haven’t already and run that bit of code, nothing particularly thrilling will happen and you may notice that the console does not return anything exciting. However, take a look at the <strong>environment</strong> panel (top right) and what do you notice?</p>
+<p>If it has worked, you should spot that there is an object called <code>myobject</code> (or whatever you called yours) as shown in Figure <a href="putting-r-to-work.html#fig:fig-environment">2.1</a>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-environment"></span>
+<img src="images/object.png" alt="The environment contains the new object called `myobject`." width="100%" />
+<p class="caption">
+Figure 2.1: The environment contains the new object called <code>myobject</code>.
+</p>
+</div>
+<blockquote>
+<p>In the R world:</p>
+<ul>
+<li><p>Everything that exists is an object.</p></li>
+<li><p>Everything that happens is a function.</p></li>
+</ul>
+</blockquote>
+<p>Almost anything can be committed to an object in RStudio. For example, run and adapt the code below. Change “Luke” to your own name! Then check that your environment looks like Figure <a href="putting-r-to-work.html#fig:fig-environment-1">2.2</a>.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="putting-r-to-work.html#cb11-1" tabindex="-1"></a>name <span class="ot">&lt;-</span> <span class="st">&quot;Luke&quot;</span></span>
+<span id="cb11-2"><a href="putting-r-to-work.html#cb11-2" tabindex="-1"></a>answer <span class="ot">&lt;-</span> <span class="dv">12345</span><span class="sc">*</span><span class="dv">54321</span></span>
+<span id="cb11-3"><a href="putting-r-to-work.html#cb11-3" tabindex="-1"></a>pi <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fl">3.14159265359</span>, <span class="at">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-environment-1"></span>
+<img src="images/environment.png" alt="The environment contains multiple new objects." width="100%" />
+<p class="caption">
+Figure 2.2: The environment contains multiple new objects.
+</p>
+</div>
+<p>We can also print an object to the console. Essentially this will ask RStudio to just show the contents of an object in the console. You should try this with the <code>print()</code> function, see below.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="putting-r-to-work.html#cb12-1" tabindex="-1"></a><span class="fu">print</span>(myobject)</span>
+<span id="cb12-2"><a href="putting-r-to-work.html#cb12-2" tabindex="-1"></a><span class="fu">print</span>(name)</span>
+<span id="cb12-3"><a href="putting-r-to-work.html#cb12-3" tabindex="-1"></a><span class="fu">print</span>(answer)</span>
+<span id="cb12-4"><a href="putting-r-to-work.html#cb12-4" tabindex="-1"></a><span class="fu">print</span>(pi)</span></code></pre></div>
+<div id="naming-and-removing-objects" class="section level3 hasAnchor" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> <strong>Naming and Removing Objects</strong><a href="putting-r-to-work.html#naming-and-removing-objects" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>I did say that you can call an object anything you like. One thing that will help is to try and keep object names short. That is because often you might need to keep typing out object names, particularly if you use the object frequently (e.g., an object that contains your data set for analysis).</p>
+<p>Generally, avoid using multiple words and keep it short and informative.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="putting-r-to-work.html#cb13-1" tabindex="-1"></a>what_is_my_first_name <span class="ot">&lt;-</span> <span class="st">&quot;Luke&quot;</span> <span class="co"># this is not a good object name. it is too long.</span></span>
+<span id="cb13-2"><a href="putting-r-to-work.html#cb13-2" tabindex="-1"></a>name <span class="ot">&lt;-</span> <span class="st">&quot;Luke&quot;</span> <span class="co"># this is a short informative object name</span></span></code></pre></div>
+<p>Finally, if you want to remove an object from your environment you can use the code below:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="putting-r-to-work.html#cb14-1" tabindex="-1"></a><span class="fu">rm</span>(myobject, name, answer, pi) <span class="co"># will remove these four objects.</span></span>
+<span id="cb14-2"><a href="putting-r-to-work.html#cb14-2" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="putting-r-to-work.html#cb14-3" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>()) <span class="co"># will remove EVERYTHING from the environment.</span></span></code></pre></div>
+</div>
+</div>
+<div id="troubleshooting-and-getting-help-with-r" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> Troubleshooting and Getting Help with R<a href="putting-r-to-work.html#troubleshooting-and-getting-help-with-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>During the early stages of learning to code it is not uncommon to come across error messages. Sometimes the code will not work and this can be frustrating. Also, some error messages are a little tricky to interpret. Thankfully there are options for support to troubleshoot issues.</p>
+<p>Firstly, remember to use <code>?</code> in front of a function to check out the documentation to ensure you are using it correctly. If I wanted to learn about the <code>rm()</code> function from the previous section I would use:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="putting-r-to-work.html#cb15-1" tabindex="-1"></a>?<span class="fu">rm</span>()</span></code></pre></div>
+<p>Secondly, if you come across an error message and you cannot figure it out/it looks a load of gibberish, copy and paste the error message into Google. It is likely that someone else would have experienced this error and there is probably a solution already online.</p>
+<p>Finally, one of the most common issues when learning to code is the presence of a typo. When you code in RStudio it needs to be written very specifically and how it expects it to be written. RStudio will not work if you make a typo. Similarly, R code is case sensitive. <code>myobject</code> is not the same as <code>MYOBJECT</code> or <code>mYobject</code>.</p>
+<p>Take your time to check you code carefully when you are starting out in R, most errors tend to be small typos.</p>
+<p>Therefore, here we have our second important rule:</p>
+<blockquote>
+<p><strong>Check your code for typos and enter it exactly as R expects</strong></p>
+</blockquote>
+</div>
+<div id="chapter-summary-1" class="section level2 hasAnchor" number="2.6">
+<h2><span class="header-section-number">2.6</span> Chapter Summary<a href="putting-r-to-work.html#chapter-summary-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>You should now have an understanding of how functions and arguments work. You should also have ran your very first lines of code! Congratulations, you are officially an R coder. You should also now be able to create objects, name them appropriately, and remove them from the environment. Finally, you should be aware of two key rules: (1) use comments to make notes with you code and (2) enter code exactly intended and check out for typos. In the next chapter you will begin to work with packages and learn how to import a data set into RStudio ready for data analysis.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="packages-and-importing-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["StartR.pdf", "StartR.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+</body>
+
+</html>

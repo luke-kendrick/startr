@@ -1,0 +1,17 @@
+h1:packages-and-importing-data Packages and Importing Data
+h2:what-are-packages What are Packages?
+h3:installing-a-package Installing a Package
+h3:loading-a-package Loading a Package
+h3:checking-packages Checking Packages
+fig:fig-environment-3 An example of the packages tab with the Tidyverse package loaded.
+h2:importing-data Importing Data
+h3:set-the-working-directory Set the Working Directory
+fig:fig-environment-4 Set the working directory
+fig:fig-environment-5 Head into the folder that you will use as your working directory in this session
+h3:importing-data-1 Importing Data
+h3:read_csv read_csv()
+fig:fig-environment-6 The environment panel with the newly created `data` object
+h3:some-very-basic-descriptive-statistics Some (very) Basic Descriptive Statistics
+h3:using-the-pipe-operator Using the Pipe Operator
+h2:chapter-summary Chapter Summary
+
