@@ -2,7 +2,7 @@ bookdown::bs4_book:
   css: style.css  # Ensures custom styling is applied
   theme:
     primary: "#096B72"  # Custom theme color for Bookdown HTML output
-  repo: https://github.com/rstudio/bookdown-demo  # Optional GitHub repo link
+  repo:
 
 bookdown::pdf_book:
   includes:

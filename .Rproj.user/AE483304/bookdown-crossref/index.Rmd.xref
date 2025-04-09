@@ -1,6 +1,7 @@
 h1:url-your-book-url-like-httpsbookdown.orgyihuibookdown url: your book url like https://bookdown.org/yihui/bookdown
 h1:cover-image-path-to-the-social-sharing-image-like-imagescover.jpg cover-image: path to the social sharing image like images/cover.jpg
 h1:welcome-to-startr Welcome to StartR
+fig:fig  
 fig:fig1 **R** is not just the sound a pirate makes, but it is also a programming language.
 h2:what-is-r-and-rstudio What is R and RStudio?
 h2:installing-r-and-rstudio Installing R and RStudio

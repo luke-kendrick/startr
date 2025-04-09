@@ -26,7 +26,7 @@ Once you have run the line of code, take a look at the **console** (bottom left 
 
 ```r
 date()
-#> [1] "Wed Apr  9 13:31:10 2025"
+#> [1] "Wed Apr  9 14:08:08 2025"
 ```
 
 Congratulations! You have entered the world of coding.
@@ -210,7 +210,7 @@ Firstly, remember to use `?` in front of a function to check out the documentati
 
 Secondly, if you come across an error message and you cannot figure it out/it looks a load of gibberish, copy and paste the error message into Google. It is likely that someone else would have experienced this error and there is probably a solution already online.
 
-Finally, one of the most common issues when learning to code is the presence of a typo. When you code in RStudio it needs to be written very specifically and how it expects it to be written. RStudio will not work if you make a typo. Similarly, R code is case sensitive. `myobject` is not the same as `MYOBJECT` or `mYobject`. 
+Finally, one of the most common issues when learning to code is the presence of a typo. When you code in RStudio it needs to be written very specifically and how it expects it to be written. RStudio will not work if you make a typo. Similarly, R code is case sensitive. `myobject` is not the same as `MYOBJECT` or `mYobject`.
 
 Take your time to check you code carefully when you are starting out in R, most errors tend to be small typos.
 

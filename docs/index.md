@@ -7,15 +7,15 @@ documentclass: book
 bibliography: [book.bib, packages.bib]
 # url: your book url like https://bookdown.org/yihui/bookdown
 # cover-image: path to the social sharing image like images/cover.jpg
-description: |
-  This is a minimal example of using the bookdown package to write a book.
-  The HTML output format for this example is bookdown::bs4_book,
-  set in the _output.yml file.
 biblio-style: apalike
 csl: chicago-fullnote-bibliography.csl
 ---
-
 # Welcome to StartR
+
+<div class="figure" style="text-align: center">
+<img src="images/startr.png" alt=" " width="50%" />
+<p class="caption"> </p>
+</div>
 
 StartR is a short course for someone who wants a beginner's guide to using R and RStudio. This resource is suitable for anyone who wants a gentle self-paced introduction.
 
