@@ -1,16 +1,7 @@
 h1:url-your-book-url-like-httpsbookdown.orgyihuibookdown url: your book url like https://bookdown.org/yihui/bookdown
 h1:cover-image-path-to-the-social-sharing-image-like-imagescover.jpg cover-image: path to the social sharing image like images/cover.jpg
-h1:welcome-to-startr Welcome to StartR
-fig:fig  
-fig:fig1 **R** is not just the sound a pirate makes, but it is also a programming language.
-h2:what-is-r-and-rstudio What is R and RStudio?
-h2:installing-r-and-rstudio Installing R and RStudio
-h2:opening-rstudio Opening RStudio
-fig:fig2 Look out for the RStudio logo.
-fig:fig3 RStudio when first opened.
-fig:fig4 Open a new R Script.
-fig:fig5 You should see four panels now which means you are ready to start working with RStudio.
-h2:a-quick-tour-of-rstudio A Quick Tour of RStudio
-fig:fig6 The four panels in RStudio.
-h2:chapter-summary Chapter Summary
+h1:preface Preface
+h2:about-this-book About this Book
+h2:license 
+h2:citation 
 

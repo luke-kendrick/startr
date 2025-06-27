@@ -10,6 +10,9 @@ fig:fig-environment-3
 fig:fig-environment-4
 fig:fig-environment-5
 fig:fig-environment-6
+about-this-book
+license
+citation
 welcome-to-startr
 what-is-r-and-rstudio
 installing-r-and-rstudio

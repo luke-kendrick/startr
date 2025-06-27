@@ -88,15 +88,17 @@
 \makesavenoteenv{longtable}
 \usepackage{graphicx}
 \makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-\makeatother
-% Scale images if necessary, so that they will not overflow the page
-% margins by default, and it is still possible to overwrite the defaults
-% using explicit options in \includegraphics[width, height, ...]{}
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
 % Set default figure placement to htbp
-\makeatletter
 \def\fps@figure{htbp}
 \makeatother
 \setlength{\emergencystretch}{3em} % prevent overfull lines
@@ -137,9 +139,6 @@
 
 \usepackage{fancyhdr}
 \pagestyle{plain}  % Removes headers, keeps page numbers at the bottom
-\ifLuaTeX
-  \usepackage{selnolig}  % disable illegal ligatures
-\fi
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
 \usepackage{bookmark}
@@ -153,7 +152,7 @@
 
 \title{StartR for Psychology at Royal Holloway}
 \author{Luke Kendrick}
-\date{2025-04-09}
+\date{2025-06-27}
 
 \begin{document}
 \maketitle
@@ -162,6 +161,29 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
+\chapter*{Preface}\label{preface}
+\addcontentsline{toc}{chapter}{Preface}
+
+\begin{quote}
+Welcome to StartR: A short course for someone who wants a beginner's guide to using R and RStudio
+\end{quote}
+
+\section{About this Book}\label{about-this-book}
+
+This resource is for anybody who wants a gentle and basic introduction to using R and RStudio. This resource was developed for the department of psychology at Royal Holloway University of London but it openly accessible to anybody who might want to use it.
+
+This is a work in progress, and we are continually updating it.
+
+This means if you spot an error or something that does not look quite right, please get in touch by emailing \href{mailto:luke.kendrick@rhul.ac.uk}{\nolinkurl{luke.kendrick@rhul.ac.uk}}.
+
+\section{\texorpdfstring{\textbf{License}}{License}}\label{license}
+
+This work is licensed under Creative Commons Attribution-ShareAlike 4.0 International License \href{https://creativecommons.org/licenses/by-sa/4.0/}{(CC-BY-SA 4.0)}. You are free to share and adapt the material for non-commercial purposes, with appropriate credit and under the same license. If you adapt the material, you must distribute your contributions under the same license.
+
+\section{\texorpdfstring{\textbf{Citation}}{Citation}}\label{citation}
+
+Kendrick, L. T. (2025). StartR (Version 1.0). \url{https://luke-kendrick.github.io/startr/}
+
 \chapter{Welcome to StartR}\label{welcome-to-startr}
 
 \begin{figure}
@@ -340,7 +362,7 @@ Once you have run the line of code, take a look at the \textbf{console} (bottom 
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{date}\NormalTok{()}
-\CommentTok{\#\textgreater{} [1] "Wed Apr  9 14:07:58 2025"}
+\CommentTok{\#\textgreater{} [1] "Fri Jun 27 12:54:16 2025"}
 \end{Highlighting}
 \end{Shaded}
 
