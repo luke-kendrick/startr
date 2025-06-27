@@ -13,7 +13,7 @@ csl: chicago-fullnote-bibliography.csl
 
 # Preface {.unnumbered}
 
-> Welcome to StartR: A short course for someone who wants a beginner's guide to using R and RStudio
+> Welcome to StartR: A short course for someone who wants a beginner's guide to using R and RStudio.
 
 ## About this Book
 

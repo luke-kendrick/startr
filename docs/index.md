@@ -13,15 +13,19 @@ csl: chicago-fullnote-bibliography.csl
 
 # Preface {.unnumbered}
 
-> Welcome to StartR: A short course for someone who wants a beginner's guide to using R and RStudio
+> Welcome to StartR: A short course for someone who wants a beginner's guide to using R and RStudio.
 
 ## About this Book
 
-This resource is for anybody who wants a gentle and basic introduction to using R and RStudio. This resource was developed for the department of psychology at Royal Holloway University of London but it openly accessible to anybody who might want to use it.
+This resource is for anyone looking for a gentle and basic introduction to using R and RStudio.
 
-This is a work in progress, and we are continually updating it.
+It was developed for the Department of Psychology at Royal Holloway, University of London, but it’s openly accessible to anyone who might find it useful.
 
-This means if you spot an error or something that does not look quite right, please get in touch by emailing [luke.kendrick\@rhul.ac.uk](mailto:luke.kendrick@rhul.ac.uk){.email}.
+This is a work in progress, and we’re continually updating and improving it.
+
+If you spot an error or something that doesn’t look quite right, please get in touch:
+
+[luke.kendrick\@rhul.ac.uk](mailto:luke.kendrick@rhul.ac.uk){.email}.
 
 ## **License**
 
